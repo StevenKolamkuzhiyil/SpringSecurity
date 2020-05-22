@@ -1,0 +1,26 @@
+/* Center align the text within the three columns below the carousel */
+.marketing .col-lg-4 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.marketing h2 {
+  font-weight: 400;
+}
+.marketing .col-lg-4 p {
+  margin-right: .75rem;
+  margin-left: .75rem;
+}
+
+.circle {
+    border-radius: 50%;
+    border: #ffffff80 solid 1.25rem;
+    height: 170px;
+    width: 170px;
+    margin: 20px auto;
+}
+
+.score {
+  color: #fff;
+  font-size: 2.5rem;
+  font-weight: bold;
+}

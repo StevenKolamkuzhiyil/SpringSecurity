@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+      lang="en">
+<head>
+    <th:block th:fragment="headerfiles">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="Steven Kolamkuzhiyil">
+
+        <title>Tic Tac Toe</title>
+
+        <!-- Favicon -->
+        <link rel="apple-touch-icon" sizes="180x180" href="#" th:href="@{~/apple-touch-icon.png}">
+        <link rel="icon" type="image/png" sizes="32x32" href="#" th:href="@{~/favicon-32x32.png}">
+        <link rel="icon" type="image/png" sizes="16x16" href="#" th:href="@{~/favicon-16x16.png}">
+        <link rel="manifest" href="#" th:href="@{~/site.webmanifest}">
+        <link rel="mask-icon" href="#" th:href="@{~/safari-pinned-tab.svg}" color="#5bbad5">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="theme-color" content="#ffffff">
+        <!-- Bootstrap core CSS -->
+        <link rel="stylesheet" th:href="@{~/bootstrap4/css/bootstrap.min.css}">
+    </th:block>
+
+    <th:block th:fragment="footer-headerfiles">
+        <link rel="stylesheet" th:href="@{~/css/sticky-footer.css}">
+    </th:block>
+
+    <th:block th:fragment="csrf-header">
+        <meta th:name="_csrf" th:content="${_csrf.token}"/>
+        <meta th:name="_csrf_header" th:content="${_csrf.headerName}"/>
+    </th:block>
+
+    <title th:replace="">Tic Tac Toe</title>
+</head>
+
+<body>
+<header th:fragment="nav">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+        <a class="navbar-brand" href="#" th:href="@{~/index}">Tic Tac Toe</a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+                <li sec:authorize="isAuthenticated()" class="nav-item">
+                    <a class="nav-link" href="#" th:href="@{~/user/profile/index}">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" th:href="@{~/game/index}">Play</a>
+                </li>
+            </ul>
+            <form class="form-inline mt-2 mt-md-0" action="#" th:action="@{~/user/logout}" method="post">
+                <button sec:authorize="isAuthenticated()" type="submit" class="btn btn-outline-danger my-2 my-sm-0">
+                    Logout
+                </button>
+                <a sec:authorize="isAnonymous()" th:if="${#httpServletRequest.requestURI != '/user/login'}"
+                   class="btn btn-outline-info my-2 my-sm-0" href="#" th:href="@{~/user/login}">Login</a>
+            </form>
+        </div>
+    </nav>
+</header>
+
+<footer th:fragment="footer" class="footer">
+    <div class="container text-center">
+        <span class="text-muted">&copy; 2020 Steven Kolamkuzhiyil</span>
+    </div>
+</footer>
+
+<th:block th:fragment="ajax-jquery">
+    <script src="#" th:src="@{https://code.jquery.com/jquery-3.4.1.min.js}"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="bootstrap4/jquery-3.4.1.min.js"><\/script>')</script>
+</th:block>
+<th:block th:fragment="nav-jquery">
+    <!--
+    <script src="#" th:src="@{https://code.jquery.com/jquery-3.2.1.slim.min.js}" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="bootstrap4/jquery-slim.min.js"><\/script>')</script>
+    -->
+    <script src="#" th:src="@{https://code.jquery.com/jquery-3.4.1.slim.js}"
+            integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI=" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="bootstrap4/jquery-3.4.1.slim.min.js"><\/script>')</script>
+</th:block>
+<th:block th:fragment="nav-script">
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="#" th:src="@{~/bootstrap4/popper.min.js}"></script>
+    <script src="#" th:src="@{~/bootstrap4/js/bootstrap.min.js}"></script>
+</th:block>
+</body>
+</html>

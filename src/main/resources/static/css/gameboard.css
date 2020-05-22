@@ -1,0 +1,77 @@
+.tic-wrapper {
+  position: relative;
+  min-width: fit-content;
+}
+
+.select-seed-panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  background-color: #ffffffd8;
+  z-index: 9;
+}
+.hide {
+  display: none !important;
+  z-index: -1;
+}
+
+.fit-content {
+  width: fit-content;
+}
+
+/* ---------------------------------------------------------------- */
+.board-width {
+  max-width: 405px;
+  width: calc(30vmin * 3);
+}
+.board-height {
+  max-height: 405px;
+  height: calc(30vmin * 3);
+}
+.cell-width {
+  max-width: 135px;
+  width: 30vmin;
+}
+.cell-height {
+  max-height: 135px;
+  height: 30vmin;
+}
+
+.tic-row {
+  border-top: 3px solid #333e48;
+  border-bottom: 3px solid #333e48;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.tic-row:first-child,
+.tic-row:last-child {
+  border-top: none !important;
+  border-bottom: none !important;
+}
+
+.tic-box {
+  float: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-left: 3px solid #333e48;
+  border-right: 3px solid #333e48;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.tic-box:first-child,
+.tic-box:last-child {
+  border-left: none !important;
+  border-right: none !important;
+}
+
+.tic-text {
+  font-family: cursive;
+  font-size: 3rem;
+  font-weight: bold;
+}

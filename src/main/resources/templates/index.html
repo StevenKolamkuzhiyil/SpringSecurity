@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <title>Tic Tac Toe</title>
+    <div th:replace="fragments.html :: headerfiles"></div>
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="#" th:href="@{~/css/cover.css}">
+</head>
+<body class="cover-wrapper">
+<div th:insert="fragments.html :: nav" class="masthead mb-auto"></div>
+<section class="cover-container text-center p-3 mx-auto">
+    <main role="main" class="inner cover">
+        <div class="media mb-4 justify-content-center">
+            <span class="align-self-center mr-1">
+                <img src="#" th:src="@{~/TicTacToe.svg}" alt="" width="56" height="56">
+            </span>
+            <h1 sec:authorize="isAnonymous()" class="align-self-center media-heading ml-1">Tic Tac Toe</h1>
+            <h1 sec:authorize="isAuthenticated()" class="align-self-center media-heading ml-1">
+                Welcome <span th:text="${session.userReference}"></span>!
+            </h1>
+        </div>
+        <p class="lead">Play exciting Tic Tac Toe matches against friends or our intelligent bot!</p>
+        <p class="lead">
+            <a sec:authorize="isAnonymous()" class="btn btn-lg btn-primary m-2" href="#" th:href="@{~/user/register}">Create
+                Account</a>
+            <a class="btn btn-lg btn-primary m-2" th:href="@{~/game/index}">Play against Bot</a>
+        </p>
+    </main>
+</section>
+<footer class="mastfoot text-center mt-auto">
+    <p class="text-muted">&copy; 2020 Steven Kolamkuzhiyil</p>
+</footer>
+<footer th:replace="fragments.html :: nav-jquery"></footer>
+<div th:replace="fragments.html :: nav-script"></div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     preserveAspectRatio="xMidYMid meet" viewBox="0 0 512 512" width="512" height="512">
+    <defs>
+        <circle cx="256" cy="256" r="256" id="circle2"/>
+        <path d="M610 320C610 480.06 480.06 610 320 610C159.94 610 30 480.06 30 320C30 159.94 159.94 30 320 30C480.06 30 610 159.94 610 320Z"
+              id="circle"/>
+        <radialGradient id="grad1" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+            <stop offset="0%" style="stop-color:#b03fe4; stop-opacity:1"/>
+            <stop offset="100%" style="stop-color:#2c044a;stop-opacity:1"/>
+        </radialGradient>
+        <path d="M332.895,244.532c-36.824,0-66.783-29.959-66.783-66.783s29.959-66.783,66.783-66.783s66.783,
+        29.959,66.783,66.783S369.717,244.532,332.895,244.532z M332.895,144.358c-18.412,0-33.391,14.979-33.391,33.391
+        s14.979,33.391,33.391,33.391s33.391-14.979,33.391-33.391S351.305,144.358,332.895,144.358z" id="o-right-top"/>
+        <polygon points="246.564,133.902 222.953,110.291 179.105,154.139 135.259,110.291 111.648,133.902 155.496,
+        177.75 111.648,221.596 135.259,245.207 179.105,201.361 222.953,245.207 246.564,221.596 202.716,177.75 "
+                 id="x-left-top"/>
+        <path d="M179.105,401.033c-36.824,0-66.783-29.959-66.783-66.783s29.959-66.783,66.783-66.783s66.783,29.959,
+        66.783,66.783S215.929,401.033,179.105,401.033z M179.105,300.859c-18.412,0-33.391,14.979-33.391,33.391c0,18.412,
+        14.979,33.391,33.391,33.391s33.391-14.979,33.391-33.391C212.497,315.838,197.517,300.859,179.105,300.859z"
+              id="o-right-bottom"/>
+        <polygon points="400.352,290.404 376.741,266.793 332.895,310.639 289.047,266.793 265.436,290.404 309.284,334.25
+         265.436,378.098 289.047,401.708 332.895,357.861 376.741,401.708 400.352,378.098 356.504,334.25 "
+                 id="x-left-bottom"/>
+    </defs>
+    <g>
+        <g>
+            <g>
+                <use xlink:href="#circle2" opacity="1" fill="url(#grad1)"/>
+            </g>
+            <g>
+                <use xlink:href="#o-right-top" opacity="1" fill="#ffffff"/>
+            </g>
+            <g>
+                <use xlink:href="#x-left-top" opacity="1" fill="#ffffff"/>
+            </g>
+            <g>
+                <use xlink:href="#o-right-bottom" opacity="1" fill="#ffffff"/>
+            </g>
+            <g>
+                <use xlink:href="#x-left-bottom" opacity="1" fill="#ffffff"/>
+            </g>
+        </g>
+    </g>
+</svg>

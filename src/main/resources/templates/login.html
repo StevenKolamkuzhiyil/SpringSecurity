@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      lang="en">
+<head>
+    <title>Sign In</title>
+    <div th:replace="fragments.html :: headerfiles"></div>
+    <div th:replace="fragments.html :: footer-headerfiles"></div>
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="#" th:href="@{~/css/floating-labels.css}">
+</head>
+
+<body class="bg-light">
+<header th:replace="fragments.html :: nav"></header>
+<main class="form-container content">
+    <form autocomplete="on" class="form-signin" action="#" th:action="@{~/user/signIn}" method="post">
+        <div class="text-center mb-4">
+            <img class="mb-4" src="#" th:src="@{~/TicTacToe.svg}" alt="Logo" width="72" height="72">
+            <h1 class="h3 mb-3 font-weight-normal">Please Login</h1>
+
+            <!-- Thymeleaf + Spring Security error display -->
+            <div th:if="${param.error}" class="alert alert-danger">
+                Invalid username and password.
+            </div>
+
+            <div th:if="${param.logout}" class="alert alert-success">
+                You have been logged out.
+            </div>
+
+            <div th:if="${param.create}" class="alert alert-success">
+                Your account has been created successfully.
+            </div>
+        </div>
+
+        <div class="form-label-group">
+            <input type="email" class="form-control" id="email" name="email" placeholder="you@example.com"
+                   autocomplete="email" required autofocus>
+            <label for="email">Email</label>
+        </div>
+
+        <div class="form-label-group">
+            <input type="password" class="form-control" id="password" name="password" placeholder="Password"
+                   autocomplete="current-password" required>
+            <label for="password">Password</label>
+        </div>
+
+        <div class="checkbox mb-3">
+            <label for="checkRememberMe">
+                <input type="checkbox" id="checkRememberMe" name="checkRememberMe"> Remember me
+            </label>
+        </div>
+
+        <button type="submit" class="btn btn-lg btn-primary btn-block">Sign in</button>
+        <div class="text-center">
+            <a class="m-2" href="#" th:href="@{~/user/register}">Create Account</a>
+        </div>
+    </form>
+</main>
+
+<footer th:replace="fragments.html :: footer"></footer>
+<footer th:replace="fragments.html :: nav-jquery"></footer>
+<footer th:replace="fragments.html :: nav-script"></footer>
+</body>
+</html>

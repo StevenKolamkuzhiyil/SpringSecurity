@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title>Create Account</title>
+    <div th:replace="fragments.html :: headerfiles"></div>
+    <div th:replace="fragments.html :: footer-headerfiles"></div>
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="#" th:href="@{~/css/form-validation.css}">
+</head>
+
+<body class="bg-light">
+<header th:replace="fragments.html :: nav"></header>
+<main class="container content">
+    <h4 class="mb-3">Create Account</h4>
+    <form role="form" th:object="${user}" action="#" th:action="@{~/user/register}" method="post" autocomplete="on">
+
+        <div th:if="${registrationError}" th:text="${registrationError}" role="alert" class="alert alert-danger"
+             style="width: 100%;">
+            Internal Server Error
+        </div>
+
+        <div class="mb-3">
+            <label for="username">Username</label>
+            <div th:each="error: ${#fields.errors('username')}" th:text="${error}" role="alert"
+                 class="validation-message alert alert-danger" style="width: 100%;"></div>
+            <input type="text" class="form-control" th:field="*{username}" id="username" name="username"
+                   placeholder="Username" autocomplete="username" required autofocus>
+        </div>
+
+        <div class="mb-3">
+            <label for="email">Email</label>
+            <div th:each="error: ${#fields.errors('email')}" th:text="${error}" role="alert"
+                 class="validation-message alert alert-danger" style="width: 100%;"></div>
+            <input type="email" class="form-control" th:field="*{email}" id="email" name="email"
+                   placeholder="you@example.com" autocomplete="email" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="password">Password</label>
+            <div th:each="error: ${#fields.errors('password')}" th:text="${error}" role="alert"
+                 class="validation-message alert alert-danger" style="width: 100%;"></div>
+            <input type="password" class="form-control" th:field="*{password}" id="password" name="password"
+                   placeholder="Password" autocomplete="new-password" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="confirmPassword">Confirm Password</label>
+            <div th:each="error: ${#fields.errors('confirmPassword')}" th:text="${error}" role="alert"
+                 class="validation-message alert alert-danger" style="width: 100%;"></div>
+            <input type="password" class="form-control" th:field="*{confirmPassword}" id="confirmPassword"
+                   name="confirmPassword" placeholder="Confirm Password" autocomplete="new-password" required>
+        </div>
+        <hr class="mb-4">
+
+        <button type="submit" class="btn btn-primary btn-lg btn-block">Create Account</button>
+    </form>
+</main>
+
+<footer th:replace="fragments.html :: footer"></footer>
+<footer th:replace="fragments.html :: nav-jquery"></footer>
+<div th:replace="fragments.html :: nav-script"></div>
+</body>
+</html>
