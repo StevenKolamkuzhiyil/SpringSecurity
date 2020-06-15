@@ -9,7 +9,7 @@ SQL injection, authentication, authorization and form validation.
 
 ## Getting Started
 
-Clone this repository and execute the application.
+Clone this repository and run the application in an IDE of your choice.
 
 ## Used Technologies
 
